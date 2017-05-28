@@ -1,0 +1,33 @@
+---
+- name: Update repositories cache
+  become: true
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Install linux packages
+  become: true
+  apt:
+    name: "{{ item }}"
+  with_items:
+    - "{{ linux_packages }}"
+
+- name: Install python2 packages
+  become: true
+  pip:
+    name: "{{ item }}"
+  with_items:
+    - "{{ python_packages }}"
+
+- name: Configure git
+  become_user: vagrant
+  template:
+    src: gitconfig.j2
+    dest: ~/.gitconfig
+
+- name: Force nano as mc editor
+  become_user: vagrant
+  copy:
+    src: "{{ ansible_env.PWD }}/roles/development/files/.selected_editor"
+    remote_src: true
+    dest: ~/.selected_editor

@@ -1,0 +1,24 @@
+linux_packages:
+  - unzip
+  - python
+  - python-pip
+  - python3
+  - python3-pip
+  - mc
+  - nano
+  - docker.io
+  - mc
+  - htop
+  - postgresql-client
+  - gnupg
+  - screen
+  - openjdk-8-jdk
+
+python_packages:
+  - virtualenv
+  - credstash
+  - Flask
+  - awscli
+  - pytest
+  - pytest-mock
+  #- jupyter

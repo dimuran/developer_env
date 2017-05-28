@@ -1,0 +1,4 @@
+#- src: ansiblebit.oracle-java		# not working since Oracle introduced login requirement for downloads
+#- src: gantsign.java
+- src: gantsign.maven
+- src: gantsign.intellij

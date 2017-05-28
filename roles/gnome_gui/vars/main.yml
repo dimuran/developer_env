@@ -1,0 +1,17 @@
+---
+gsettings:
+  - schema: com.canonical.Unity.Launcher
+    key: favorites
+    value: $(cat {{ ansible_env.PWD }}/roles/gnome_gui/files/favorites.cfg)
+  - schema: org.gnome.desktop.background
+    key: picture-uri
+    value: ""
+  - schema: org.gnome.desktop.background
+    key: picture-options
+    value: none
+  - schema: org.gnome.desktop.background
+    key: primary-color
+    value: "#000000000000"
+  - schema: org.gnome.desktop.background
+    key: secondary-color
+    value: "#5789ca"
